@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frank's Portfolio</title>
+  <title>Frank's Portfolio - Loading</title>
   <style>
     body {
       background-color: #000;
@@ -15,37 +15,20 @@
       height: 100vh;
       margin: 0;
     }
-  pre {
-  font-size: 12px;
-  text-align: center;
-  white-space: pr  e;
-  display: inline-block; /* Shrink to fit content width */
-}
-  
-  #loader {
-  display: flex;
-  justify-content: center;
-  align-i  tems: center;
-  height: 100vh;
-}
-  
-/* Loader styles */
-  #loader {
-    text-align: center;
-    font-size: 50px;
-    white-space: pre; /* Preserve spaces and line breaks */
-    line-height: 1.2; /* Adjust line height for better spacing */
-    opacity: 1; /* Start fully visible */
-    transition: opacity 1s ease-out; /* Fade-out transition */
-  }
 
-/* Hide main content initially */
-  #main-content {
-    display: none;
-    text-align: center;
-    opacity: 0; /* Start fully transparent */
-    transition: opacity 1s ease-in; /* Fade-in transition */
-}
+    /* Loader styles */
+    #loader {
+      text-align: center;
+      font-size: 20px; /* Larger font size */
+      white-space: pre; /* Preserve spaces and line breaks */
+      line-height: 1.2; /* Adjust line height for better spacing */
+    }
+
+    /* Hide main content initially */
+    #main-content {
+      display: none;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -65,71 +48,70 @@
        _..._     
      .:::::::.    
     :::::::::::   
-  ::::::::::: 
+    ::::::::::: 
     \`:::::::::'  
-    \`':::'' 
+      \`':::'' 
       `,
       `
        _..._     
      .::::. \`.    
-     :::::::.   :    
-   ::::::::   :  
+    :::::::.  :    
+    ::::::::  :  
     \`::::::' .'  
-    \`'::'-' 
+      \`'::'-' 
       `,
       `
        _..._     
      .::::  \`.    
-     ::::::     :    
-   ::::::.    :  
+    ::::::    :    
+    ::::::    :  
     \`:::::   .'  
-    \`'::.-' 
+      \`'::.-' 
       `,
       `
        _..._     
      .::'   \`.    
-    :::        :    
-   :::.       :  
+    :::       :    
+    :::       :  
     \`::.     .'  
-    \`':..-' 
+      \`':..-' 
       `,
       `
        _..._     
      .'     \`.    
-    :          :    
-   :          :  
+    :         :    
+    :         :  
     \`.       .'  
-    \`-...-' 
+      \`-...-' 
       `,
       `
        _..._     
      .'   \`::.    
-    :        :::    
-   :        :::  
+    :       :::    
+    :       :::  
     \`.     .::'  
-    \`-..:'' 
+      \`-..:'' 
       `,
       `
        _..._     
      .'  ::::.    
-    :     ::::::    
-   :      :::::  
+    :    ::::::    
+    :    ::::::  
     \`.   :::::'  
-    \`-.::'' 
+      \`-.::'' 
       `,
       `
        _..._     
      .' .::::.    
-    :   ::::::::    
-   :    :::::::  
+    :  ::::::::    
+    :  ::::::::  
     \`. '::::::'  
-    \`-.::'' 
+      \`-.::'' 
       `
     ];
 
     let currentPhase = 0;
     const loaderElement = document.getElementById('loader');
-    const mainContent = document.getElementById('main-content');
 
     function animateMoon() {
       loaderElement.textContent = moonPhases[currentPhase];
@@ -137,25 +119,12 @@
     }
 
     // Run the animation every 500ms
-    // Run the animation every 500ms
     const loaderInterval = setInterval(animateMoon, 500);
 
-// Simulate page loading and hide loader after 4 seconds
-    setTimeout(() => {
-    clearInterval(loaderInterval); // Stop the animation
-    loaderElement.style.opacity = '0'; // Initiate fade-out
-    mainContent.style.display = 'block'; // Ensure main content is displayed
-    setTimeout(() => {
-    loaderElement.style.display = 'none'; // Hide loader after fade-out
-    mainContent.style.opacity = '1'; // Fade-in main content
-  }, 1000); // Match this duration to the CSS transition time
-}, 4000); // Adjust time as needed
-
-    // Simulate page loading and hide loader after 4 seconds
+    // Simulate page loading and redirect to home.html after 4 seconds
     setTimeout(() => {
       clearInterval(loaderInterval); // Stop the animation
-      loaderElement.style.display = 'none'; // Hide loader
-      mainContent.style.display = 'block'; // Show main content
+      window.location.href = "home.html"; // Redirect to home.html
     }, 4000); // Adjust time as needed
   </script>
 
