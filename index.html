@@ -1,20 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frank's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frank's Portfolio</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Loader styles */
+    #loader {
+      text-align: center;
+      font-size: 12px;
+      white-space: pre;
+    }
+
+    /* Hide main content initially */
+    #main-content {
+      display: none;
+      text-align: center;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <header class="p-6 bg-gray-800 shadow-md">
-        <h1 class="text-3xl font-bold">Frank's Portfolio</h1>
-    </header>
-    <main class="container mx-auto mt-10 p-6">
-        <section id="home">
-            <h2 class="text-2xl font-semibold">Welcome!</h2>
-            <p>This is my professional portfolio where I showcase my projects.</p>
-        </section>
-    </main>
+<body>
+
+  <!-- Loader -->
+  <pre id="loader"></pre>
+
+  <!-- Main Content (Hidden at First) -->
+  <div id="main-content">
+    <h1>Welcome to My Portfolio</h1>
+    <p>This is where my projects will be displayed.</p>
+  </div>
+
+  <script>
+    const moonPhases = [
+      `       _..._     
+     .:::::::.    
+    :::::::::::   
+    ::::::::::: 
+    \`:::::::::'  
+     \`':::'' `,
+      `       _..._     
+     .::::. \`.    
+    :::::::.  :    
+    ::::::::  :  
+    \`::::::' .'  
+     \`'::'-' `,
+      `       _..._     
+     .::::  \`.    
+    ::::::    :    
+    ::::::    :  
+    \`:::::   .'  
+     \`'::.-' `,
+      `       _..._     
+     .::'   \`.    
+      :::       :    
+    :::       :  
+    \`::.     .'  
+     \`':..-'  `,
+      `       _..._     
+     .'     \`.    
+      :         :    
+    :         :  
+    \`.       .'  
+    \`-...-'  `,
+      `       _..._     
+     .'   \`::.    
+      :       :::    
+    :       :::  
+    \`.     .::'  
+    \`-..:'' `,
+      `       _..._     
+     .'  ::::.    
+      :    ::::::    
+    :    ::::::  
+    \`.   :::::'  
+     \`-.::''  `,
+      `       _..._     
+     .' .::::.    
+      :  ::::::::    
+    :  ::::::::  
+    \`. '::::::'  
+     \`-.::'' `
+    ];
+
+    let currentPhase = 0;
+    const loaderElement = document.getElementById('loader');
+    const mainContent = document.getElementById('main-content');
+
+    function animateMoon() {
+      loaderElement.textContent = moonPhases[currentPhase];
+      currentPhase = (currentPhase + 1) % moonPhases.length;
+    }
+
+    // Run the animation every 500ms
+    const loaderInterval = setInterval(animateMoon, 500);
+
+    // Simulate page loading and hide loader after 4 seconds
+    setTimeout(() => {
+      clearInterval(loaderInterval); // Stop the animation
+      loaderElement.style.display = 'none'; // Hide loader
+      mainContent.style.display = 'block'; // Show main content
+    }, 4000); // Adjust time as needed
+  </script>
+
 </body>
 </html>
+
