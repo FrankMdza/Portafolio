@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,14 +12,14 @@
       padding: 0;
       height: 100%;
       font-family: 'Arial', sans-serif;
-      overflow: hidden; /* Prevent scrolling */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     /* Video Banner Container */
     .video-banner {
       position: relative;
       width: 100%;
-      height: 100vh; /* Full viewport height */
+      height: 100vh;
       overflow: hidden;
     }
 
@@ -29,9 +30,9 @@
       left: 50%;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensure video covers the entire container */
+      object-fit: cover;
       transform: translate(-50%, -50%);
-      z-index: -1; /* Place video behind text */
+      z-index: -1;
     }
 
     /* Text Overlay */
@@ -42,14 +43,14 @@
       transform: translate(-50%, -50%);
       text-align: center;
       color: #fff;
-      z-index: 1; /* Place text above video */
+      z-index: 1;
     }
 
     .text-overlay h1 {
-      font-size: 4rem; /* Large heading */
+      font-size: 4rem;
       margin: 0;
       font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     .text-overlay p {
@@ -75,24 +76,56 @@
     .text-overlay .cta-button:hover {
       background-color: #0056b3;
     }
+
+    /* Additional Sections */
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
 
   <!-- Video Banner Section -->
   <div class="video-banner">
-    <!-- Video Background -->
     <video autoplay muted loop>
       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
-    <!-- Text Overlay -->
     <div class="text-overlay">
       <h1>Welcome to My Portfolio</h1>
       <p>Creating innovative solutions for a better tomorrow.</p>
       <a href="#about" class="cta-button">Learn More</a>
     </div>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a passionate developer with expertise in web development, design, and problem-solving. Let's build something amazing together!</p>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="section">
+    <h2>Projects</h2>
+    <p>Check out some of my latest projects below.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Feel free to reach out to me for collaborations or inquiries.</p>
   </div>
 
 </body>
