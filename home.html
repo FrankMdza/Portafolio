@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +13,8 @@
       padding: 0;
       height: 100%;
       font-family: 'Arial', sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
       overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
@@ -19,7 +22,7 @@
     .video-banner {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 100vh; /* Full viewport height */
       overflow: hidden;
     }
 
@@ -30,9 +33,9 @@
       left: 50%;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* Ensure video covers the entire container */
       transform: translate(-50%, -50%);
-      z-index: -1;
+      z-index: -1; /* Place video behind text */
     }
 
     /* Text Overlay */
@@ -43,14 +46,14 @@
       transform: translate(-50%, -50%);
       text-align: center;
       color: #fff;
-      z-index: 1;
+      z-index: 1; /* Place text above video */
     }
 
     .text-overlay h1 {
-      font-size: 4rem;
+      font-size: 4rem; /* Large heading */
       margin: 0;
       font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
     }
 
     .text-overlay p {
@@ -77,21 +80,115 @@
       background-color: #0056b3;
     }
 
-    /* Additional Sections */
-    .section {
+    /* Projects Section */
+    .projects-section {
       padding: 4rem 2rem;
       text-align: center;
+      background-color: #000; /* Black background */
     }
 
-    .section h2 {
+    .projects-section h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .section p {
-      font-size: 1.2rem;
-      max-width: 800px;
+    .project-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      background-color: #1a1a1a; /* Dark gray card background */
+      border-radius: 10px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background-color: #0056b3;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #000; /* Black background */
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #1a1a1a; /* Dark gray input background */
+      color: #fff; /* White text */
+    }
+
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+      color: #888; /* Light gray placeholder text */
+    }
+
+    .contact-form button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -106,26 +203,47 @@
     <div class="text-overlay">
       <h1>Welcome to My Portfolio</h1>
       <p>Creating innovative solutions for a better tomorrow.</p>
-      <a href="#about" class="cta-button">Learn More</a>
+      <a href="#projects" class="cta-button">View Projects</a>
     </div>
   </div>
 
-  <!-- About Section -->
-  <div id="about" class="section">
-    <h2>About Me</h2>
-    <p>I am a passionate developer with expertise in web development, design, and problem-solving. Let's build something amazing together!</p>
-  </div>
-
   <!-- Projects Section -->
-  <div class="section">
+  <div id="projects" class="projects-section">
     <h2>Projects</h2>
-    <p>Check out some of my latest projects below.</p>
+    <div class="project-cards">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>A brief description of Project 1.</p>
+        <a href="https://github.com/FrankMdza/Portafolio" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>A brief description of Project 2.</p>
+        <a href="https://github.com/FrankMdza/Portafolio" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+        <h3>Project 3</h3>
+        <p>A brief description of Project 3.</p>
+        <a href="https://github.com/FrankMdza/Portafolio" target="_blank">View on GitHub</a>
+      </div>
+    </div>
   </div>
 
   <!-- Contact Section -->
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me for collaborations or inquiries.</p>
+  <div class="contact-section">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone Number" required>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 
 </body>
